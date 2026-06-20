@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://db4rfs4wnkwfw"]
+
+[ext_resource type="Script" uid="uid://by1c1efhkvo1y" path="res://tumbleweed.gd" id="1_t61di"]
+[ext_resource type="Texture2D" uid="uid://dotpkurm0ud2" path="res://sprites/tumble_weed_roll.png" id="2_dxnso"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aayv8"]
+atlas = ExtResource("2_dxnso")
+region = Rect2(0, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1la7w"]
+atlas = ExtResource("2_dxnso")
+region = Rect2(300, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umo8d"]
+atlas = ExtResource("2_dxnso")
+region = Rect2(600, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82pij"]
+atlas = ExtResource("2_dxnso")
+region = Rect2(900, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sd1cd"]
+atlas = ExtResource("2_dxnso")
+region = Rect2(1200, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcolm"]
+atlas = ExtResource("2_dxnso")
+region = Rect2(1500, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p3e8c"]
+atlas = ExtResource("2_dxnso")
+region = Rect2(1800, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a24t7"]
+atlas = ExtResource("2_dxnso")
+region = Rect2(2100, 0, 300, 300)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pf2jp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aayv8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1la7w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umo8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82pij")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sd1cd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcolm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p3e8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a24t7")
+}],
+"loop": true,
+"name": &"roll",
+"speed": 20.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ldma0"]
+radius = 1.6515887
+
+[node name="tumbleweed" type="Area2D" unique_id=1798084989]
+script = ExtResource("1_t61di")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=665409079]
+texture_filter = 1
+position = Vector2(0, -20)
+scale = Vector2(0.17, 0.16666667)
+sprite_frames = SubResource("SpriteFrames_pf2jp")
+animation = &"roll"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1883798712]
+position = Vector2(1, -23)
+scale = Vector2(11.519998, 11.519998)
+shape = SubResource("CircleShape2D_ldma0")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

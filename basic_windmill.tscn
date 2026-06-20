@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://6v156803cju1"]
+
+[ext_resource type="Script" uid="uid://b7bqy7entvpxt" path="res://windmill.gd" id="1_yl7hn"]
+[ext_resource type="Texture2D" uid="uid://b8ujwev6g1ghk" path="res://sprites/windmill_basic_sheet.png" id="2_ku7aw"]
+[ext_resource type="Texture2D" uid="uid://c3odugi4akgx6" path="res://sprites/wooden_sign.png" id="3_uci44"]
+[ext_resource type="FontFile" uid="uid://dt2gd65vvhkl" path="res://fonts/Realwood Regular.otf" id="4_uci44"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uci44"]
+atlas = ExtResource("2_ku7aw")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4alik"]
+atlas = ExtResource("2_ku7aw")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbk3a"]
+atlas = ExtResource("2_ku7aw")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m1336"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uci44")
+}],
+"loop": false,
+"name": &"Idle",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4alik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbk3a")
+}],
+"loop": true,
+"name": &"Manual_Spin",
+"speed": 20.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yfnv7"]
+radius = 78.23043
+
+[node name="Node2D" type="Area2D" unique_id=1684639507]
+script = ExtResource("1_yl7hn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=839605981]
+texture_filter = 1
+position = Vector2(-1.019989, -209.74008)
+scale = Vector2(3.7809377, 3.3009362)
+sprite_frames = SubResource("SpriteFrames_m1336")
+animation = &"Manual_Spin"
+autoplay = "Idle"
+frame = 1
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=746390526]
+position = Vector2(-3, -291)
+scale = Vector2(1.5363809, 1.3413329)
+shape = SubResource("CircleShape2D_yfnv7")
+
+[node name="manual_spin_timer" type="Timer" parent="." unique_id=45537788]
+wait_time = 2.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=928061274]
+texture_filter = 1
+position = Vector2(151, -49.749992)
+scale = Vector2(3.0000002, 3.0156255)
+texture = ExtResource("3_uci44")
+
+[node name="manual_spin_timer_text" type="Label" parent="." unique_id=1747129854]
+texture_filter = 1
+offset_left = 110.0
+offset_top = -94.99999
+offset_right = 193.0
+offset_bottom = -46.999992
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/outline_size = 6
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("4_uci44")
+theme_override_font_sizes/font_size = 25
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true

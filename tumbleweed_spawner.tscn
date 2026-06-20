@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://d0txi4rjgvkfa"]
+
+[ext_resource type="Script" uid="uid://bchwfg4x8ep20" path="res://tumbleweed_spawner.gd" id="1_ohb7c"]
+
+[node name="tumbleweed_spawner" type="Node2D" unique_id=914101165]
+script = ExtResource("1_ohb7c")
+
+[node name="markerlefttop" type="Marker2D" parent="." unique_id=76690237]
+
+[node name="markerrightbottom" type="Marker2D" parent="." unique_id=418778906]
+
+[node name="markerrighttop" type="Marker2D" parent="." unique_id=179438620]
+
+[node name="markerleftbottom" type="Marker2D" parent="." unique_id=1507720711]
+
+[node name="spawner_time_window" type="Timer" parent="." unique_id=1807194556]

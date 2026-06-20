@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dbn4qkjd5ob1t"]
+
+[ext_resource type="Texture2D" uid="uid://bishlfijpnh5" path="res://sprites_large/Background.png" id="1_80nbo"]
+[ext_resource type="PackedScene" uid="uid://6v156803cju1" path="res://basic_windmill.tscn" id="2_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://d0txi4rjgvkfa" path="res://tumbleweed_spawner.tscn" id="2_ryrav"]
+
+[node name="Game" type="Node2D" unique_id=2143807939]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=5424210]
+position = Vector2(-49, 18)
+scale = Vector2(4.4180875, 1.4336119)
+texture = ExtResource("1_80nbo")
+
+[node name="Node2D" parent="." unique_id=1684639507 instance=ExtResource("2_e2o6t")]
+position = Vector2(-43, 143)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=927858317]
+zoom = Vector2(0.62, 0.62)
+
+[node name="tumbleweed_spawner" parent="." unique_id=914101165 instance=ExtResource("2_ryrav")]
+position = Vector2(-12, 6)
+
+[node name="markerlefttop" parent="tumbleweed_spawner" index="0" unique_id=76690237]
+position = Vector2(-881, 137)
+
+[node name="markerrightbottom" parent="tumbleweed_spawner" index="1" unique_id=418778906]
+position = Vector2(700, 464)
+
+[node name="markerrighttop" parent="tumbleweed_spawner" index="2" unique_id=179438620]
+position = Vector2(716, 206)
+
+[node name="markerleftbottom" parent="tumbleweed_spawner" index="3" unique_id=1507720711]
+position = Vector2(-873, 477)
+
+[editable path="tumbleweed_spawner"]
