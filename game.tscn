@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://bishlfijpnh5" path="res://sprites_large/Background.png" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://6v156803cju1" path="res://basic_windmill.tscn" id="2_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://d0txi4rjgvkfa" path="res://tumbleweed_spawner.tscn" id="2_ryrav"]
+[ext_resource type="PackedScene" uid="uid://deemf3st34n6n" path="res://flying_birdy_spawner.tscn" id="4_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://c10tugsata5n8" path="res://inventory.tscn" id="5_7jktm"]
 
 [node name="Game" type="Node2D" unique_id=2143807939]
 
@@ -21,15 +23,33 @@ zoom = Vector2(0.62, 0.62)
 position = Vector2(-12, 6)
 
 [node name="markerlefttop" parent="tumbleweed_spawner" index="0" unique_id=76690237]
-position = Vector2(-881, 137)
+position = Vector2(-1562, 150)
 
 [node name="markerrightbottom" parent="tumbleweed_spawner" index="1" unique_id=418778906]
-position = Vector2(700, 464)
+position = Vector2(1587, 482)
 
 [node name="markerrighttop" parent="tumbleweed_spawner" index="2" unique_id=179438620]
-position = Vector2(716, 206)
+position = Vector2(1589, 157)
 
 [node name="markerleftbottom" parent="tumbleweed_spawner" index="3" unique_id=1507720711]
-position = Vector2(-873, 477)
+position = Vector2(-1557, 483)
+
+[node name="birdy_spawner" parent="." unique_id=484370316 instance=ExtResource("4_fc0e3")]
+
+[node name="markerlefttop" parent="birdy_spawner" index="0" unique_id=76690237]
+position = Vector2(-1606, -539)
+
+[node name="markerrightbottom" parent="birdy_spawner" index="1" unique_id=418778906]
+position = Vector2(1573, -259)
+
+[node name="markerrighttop" parent="birdy_spawner" index="2" unique_id=179438620]
+position = Vector2(1558, -574)
+
+[node name="markerleftbottom" parent="birdy_spawner" index="3" unique_id=1507720711]
+position = Vector2(-1612, -208)
+
+[node name="Node2D2" parent="." unique_id=218685291 instance=ExtResource("5_7jktm")]
+visible = false
 
 [editable path="tumbleweed_spawner"]
+[editable path="birdy_spawner"]

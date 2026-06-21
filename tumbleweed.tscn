@@ -68,20 +68,20 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ldma0"]
-radius = 1.6515887
+radius = 2.6965673
 
 [node name="tumbleweed" type="Area2D" unique_id=1798084989]
 script = ExtResource("1_t61di")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=665409079]
 texture_filter = 1
-position = Vector2(0, -20)
-scale = Vector2(0.17, 0.16666667)
+position = Vector2(12.75, -33)
+scale = Vector2(0.255, 0.25333333)
 sprite_frames = SubResource("SpriteFrames_pf2jp")
 animation = &"roll"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1883798712]
-position = Vector2(1, -23)
+position = Vector2(13, -36)
 scale = Vector2(11.519998, 11.519998)
 shape = SubResource("CircleShape2D_ldma0")
 

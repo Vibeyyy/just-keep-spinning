@@ -1,0 +1,162 @@
+[gd_scene format=3 uid="uid://bryhs4uepia84"]
+
+[ext_resource type="Script" uid="uid://lmg24y0btg0m" path="res://flying_birdy_bird.gd" id="1_6vxy8"]
+[ext_resource type="Texture2D" uid="uid://44lp0lgd0t6b" path="res://sprites/flying_birdy.png" id="2_6vxy8"]
+[ext_resource type="AudioStream" uid="uid://culglxgkao52o" path="res://audio/bird_death_sound.wav" id="3_ike1l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ike1l"]
+atlas = ExtResource("2_6vxy8")
+region = Rect2(3504, 0, 219, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ds73j"]
+atlas = ExtResource("2_6vxy8")
+region = Rect2(0, 0, 219, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qk436"]
+atlas = ExtResource("2_6vxy8")
+region = Rect2(219, 0, 219, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbslq"]
+atlas = ExtResource("2_6vxy8")
+region = Rect2(438, 0, 219, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kuknc"]
+atlas = ExtResource("2_6vxy8")
+region = Rect2(657, 0, 219, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7e88"]
+atlas = ExtResource("2_6vxy8")
+region = Rect2(876, 0, 219, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2ey8"]
+atlas = ExtResource("2_6vxy8")
+region = Rect2(1095, 0, 219, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sttu2"]
+atlas = ExtResource("2_6vxy8")
+region = Rect2(1314, 0, 219, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ege3a"]
+atlas = ExtResource("2_6vxy8")
+region = Rect2(1533, 0, 219, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0anwv"]
+atlas = ExtResource("2_6vxy8")
+region = Rect2(1752, 0, 219, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sx1ol"]
+atlas = ExtResource("2_6vxy8")
+region = Rect2(1971, 0, 219, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gje4r"]
+atlas = ExtResource("2_6vxy8")
+region = Rect2(2190, 0, 219, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrqpx"]
+atlas = ExtResource("2_6vxy8")
+region = Rect2(2409, 0, 219, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hkrod"]
+atlas = ExtResource("2_6vxy8")
+region = Rect2(2628, 0, 219, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45e65"]
+atlas = ExtResource("2_6vxy8")
+region = Rect2(2847, 0, 219, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4v2l"]
+atlas = ExtResource("2_6vxy8")
+region = Rect2(3066, 0, 219, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ak0yg"]
+atlas = ExtResource("2_6vxy8")
+region = Rect2(3285, 0, 219, 175)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pf2jp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ike1l")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ds73j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qk436")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbslq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kuknc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w7e88")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2ey8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sttu2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ege3a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0anwv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sx1ol")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gje4r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrqpx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hkrod")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45e65")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4v2l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ak0yg")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 20.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ldma0"]
+radius = 2.6965673
+
+[node name="flying_birdy_bird" type="Area2D" unique_id=1798084989]
+script = ExtResource("1_6vxy8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=665409079]
+texture_filter = 1
+position = Vector2(12.75, -33)
+scale = Vector2(0.255, 0.25333333)
+sprite_frames = SubResource("SpriteFrames_pf2jp")
+animation = &"death"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1883798712]
+position = Vector2(13, -36)
+scale = Vector2(11.519998, 11.519998)
+shape = SubResource("CircleShape2D_ldma0")
+
+[node name="bird_death_sound" type="AudioStreamPlayer2D" parent="." unique_id=584821641]
+stream = ExtResource("3_ike1l")
+pitch_scale = 1.11
+bus = &"SFX"
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

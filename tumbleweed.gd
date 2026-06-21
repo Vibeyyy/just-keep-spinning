@@ -10,6 +10,7 @@ var despawn_x = 0
 func _ready() -> void:
 	animated_sprite_2d.play("roll")
 	if tumbleweed_spawn_side == ("right"):
+		animated_sprite_2d.flip_h = true
 		move_direction = -1
 	else:
 		move_direction = 1

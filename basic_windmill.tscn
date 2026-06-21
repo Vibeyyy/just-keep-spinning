@@ -52,8 +52,7 @@ scale = Vector2(3.7809377, 3.3009362)
 sprite_frames = SubResource("SpriteFrames_m1336")
 animation = &"Manual_Spin"
 autoplay = "Idle"
-frame = 1
-frame_progress = 1.0
+frame_progress = 0.8242878
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=746390526]
 position = Vector2(-3, -291)
@@ -62,6 +61,7 @@ shape = SubResource("CircleShape2D_yfnv7")
 
 [node name="manual_spin_timer" type="Timer" parent="." unique_id=45537788]
 wait_time = 2.0
+one_shot = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=928061274]
 texture_filter = 1
