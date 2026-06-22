@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://mqj0k3nvj8rg"]
+
+[ext_resource type="Script" uid="uid://cvg7am8tkuo4p" path="res://mail_letter_overlay.gd" id="1_iccn8"]
+[ext_resource type="Texture2D" uid="uid://cwuean1qm41xi" path="res://sprites_large/Worn-Parchment-BG-2.png" id="2_x7j8v"]
+[ext_resource type="FontFile" uid="uid://dg7yurulh224x" path="res://fonts/pirkkala.ttf" id="3_wit61"]
+
+[node name="mail_letter_overlay" type="CanvasLayer" unique_id=1231662059]
+visible = false
+script = ExtResource("1_iccn8")
+
+[node name="letter_base" type="Sprite2D" parent="." unique_id=906997609]
+texture_filter = 1
+position = Vector2(563, 328)
+scale = Vector2(2.3031137, 2.3031137)
+texture = ExtResource("2_x7j8v")
+
+[node name="tittle" type="Label" parent="." unique_id=1784152802]
+texture_filter = 1
+offset_left = 328.0
+offset_top = 75.0
+offset_right = 815.0
+offset_bottom = 130.0
+theme_override_colors/font_color = Color(0.3254902, 0.2627451, 0.1882353, 0.92156863)
+theme_override_fonts/font = ExtResource("3_wit61")
+theme_override_font_sizes/font_size = 40
+text = "Letter from the trapper..."
+horizontal_alignment = 1
+
+[node name="body" type="Label" parent="." unique_id=1281070132]
+texture_filter = 1
+offset_left = 143.0
+offset_top = 138.0
+offset_right = 1014.0
+offset_bottom = 570.0
+theme_override_colors/font_color = Color(0.3254902, 0.2627451, 0.1882353, 1)
+theme_override_fonts/font = ExtResource("3_wit61")
+theme_override_font_sizes/font_size = 28
+text = "dadadadadadadadada"
+autowrap_mode = 3
+
+[node name="close_button" type="Button" parent="." unique_id=1071330803]
+offset_left = 911.0
+offset_top = 46.0
+offset_right = 1047.0
+offset_bottom = 91.0
+text = "Close"
+
+[connection signal="pressed" from="close_button" to="." method="_on_close_button_pressed"]

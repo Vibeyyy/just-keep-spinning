@@ -5,6 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://d0txi4rjgvkfa" path="res://tumbleweed_spawner.tscn" id="2_ryrav"]
 [ext_resource type="PackedScene" uid="uid://deemf3st34n6n" path="res://flying_birdy_spawner.tscn" id="4_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://c10tugsata5n8" path="res://inventory.tscn" id="5_7jktm"]
+[ext_resource type="PackedScene" uid="uid://dn25s30f63qvl" path="res://mail_box.tscn" id="6_ryrav"]
+[ext_resource type="PackedScene" uid="uid://mqj0k3nvj8rg" path="res://mail_letter_overlay.tscn" id="7_eow3j"]
+[ext_resource type="PackedScene" uid="uid://4lsq622w5k6x" path="res://game_hud.tscn" id="8_j5wjh"]
+[ext_resource type="PackedScene" uid="uid://ckfrn6a46en46" path="res://shop.tscn" id="9_vef74"]
 
 [node name="Game" type="Node2D" unique_id=2143807939]
 
@@ -50,6 +54,15 @@ position = Vector2(-1612, -208)
 
 [node name="Node2D2" parent="." unique_id=218685291 instance=ExtResource("5_7jktm")]
 visible = false
+
+[node name="mail_box" parent="." unique_id=1306799410 instance=ExtResource("6_ryrav")]
+position = Vector2(580, 375)
+
+[node name="mail_letter_overlay" parent="." unique_id=1231662059 instance=ExtResource("7_eow3j")]
+
+[node name="game_hud" parent="." unique_id=833585222 instance=ExtResource("8_j5wjh")]
+
+[node name="shop_panel" parent="." unique_id=525627328 instance=ExtResource("9_vef74")]
 
 [editable path="tumbleweed_spawner"]
 [editable path="birdy_spawner"]

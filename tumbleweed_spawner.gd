@@ -14,8 +14,6 @@ func _ready() -> void:
 	markerrightbottom = get_node("markerrightbottom")
 	spawner_time_window = get_node("spawner_time_window")
 	GameManager.spawn_tumbleweed.connect(run_spawn_window)
-	GameManager.start_spawn_tumbleweed()
-	
 
 func spawn_tumbleweed():
 	var new_tumbleweed = tumbleweed_scene.instantiate()

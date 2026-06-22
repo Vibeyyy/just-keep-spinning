@@ -14,7 +14,7 @@ func _ready() -> void:
 	markerrightbottom = get_node("markerrightbottom")
 	spawner_time_window = get_node("spawner_time_window")
 	GameManager.spawn_birdy.connect(run_spawn_window)
-	GameManager.start_spawn_birdy()
+	
 	
 func spawn_birdy():
 	var new_birdy = birdy_scene.instantiate()

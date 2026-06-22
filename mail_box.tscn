@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://dn25s30f63qvl"]
+
+[ext_resource type="Script" uid="uid://do1s62xnxthcv" path="res://mail_box.gd" id="1_1n101"]
+[ext_resource type="Texture2D" uid="uid://qauj4yhgujnx" path="res://sprites/mail_box_sheet.png" id="1_kn73k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1n101"]
+atlas = ExtResource("1_kn73k")
+region = Rect2(73, 0, 73, 77)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17mg0"]
+atlas = ExtResource("1_kn73k")
+region = Rect2(146, 0, 73, 77)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kp381"]
+atlas = ExtResource("1_kn73k")
+region = Rect2(0, 0, 73, 77)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mxt04"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1n101")
+}],
+"loop": false,
+"name": &"mail_close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17mg0")
+}],
+"loop": false,
+"name": &"mail_open",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kp381")
+}],
+"loop": false,
+"name": &"no_mail_closed",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hnlpn"]
+size = Vector2(75, 55.5)
+
+[node name="mail_box" type="Area2D" unique_id=1306799410]
+script = ExtResource("1_1n101")
+
+[node name="mailbox" type="AnimatedSprite2D" parent="." unique_id=429195337]
+texture_filter = 1
+position = Vector2(-13.000001, -80)
+scale = Vector2(2.2808218, 2.2808218)
+sprite_frames = SubResource("SpriteFrames_mxt04")
+animation = &"no_mail_closed"
+autoplay = "no_mail_closed"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1983902111]
+position = Vector2(18.5, -90)
+shape = SubResource("RectangleShape2D_hnlpn")
+
+[node name="button_to_open_mailbox" type="Button" parent="." unique_id=991386605]
+offset_left = -27.0
+offset_top = -119.0
+offset_right = 58.0
+offset_bottom = -15.0
+
+[node name="button_to_read_mail" type="Button" parent="." unique_id=2145129316]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = -20.0
+offset_top = -122.0
+offset_right = 55.0
+offset_bottom = -13.0
+
+[node name="timer_to_get_letter_from_trapper" type="Timer" parent="." unique_id=234492315]
+one_shot = true
+
+[node name="timer_to_get_letter_from_willy" type="Timer" parent="." unique_id=1299780753]
+one_shot = true
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="button_to_open_mailbox" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="button_to_open_mailbox" to="." method="_on_button_to_open_mailbox_pressed"]
+[connection signal="pressed" from="button_to_read_mail" to="." method="_on_button_to_read_mail_pressed"]
+[connection signal="timeout" from="timer_to_get_letter_from_trapper" to="." method="_on_timer_to_get_letter_from_trapper_timeout"]
+[connection signal="timeout" from="timer_to_get_letter_from_willy" to="." method="_on_timer_to_get_letter_from_willy_timeout"]

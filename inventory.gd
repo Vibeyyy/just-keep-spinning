@@ -10,6 +10,7 @@ extends CanvasLayer
 @onready var birds_animation_easteregg_button: Button = $birds_animation_easteregg_button
 @onready var tumbleweed_animation_easteregg_button: Button = $tumbleweed_animation_easteregg_button
 @onready var sell_tumbleweeds_button: LineEdit = $sell_tumbleweeds_button
+@onready var sell_birds_button: LineEdit = $sell_birds_button
 
 @onready var money_amount: Label = $money_amount
 @onready var money_icon_click_easteregg: Button = $money_icon_click_easteregg
@@ -23,6 +24,11 @@ extends CanvasLayer
 
 
 var inventory_opened = false
+
+
+func _ready() -> void:
+	connect_signals()
+
 
 func _process(delta: float) -> void:
 	if inventory_panel.visible == true:
@@ -106,3 +112,21 @@ func _on_money_icon_click_easteregg_pressed() -> void:
 	money_icon_click_easteregg.disabled = true	
 	await money_sprite.animation_finished
 	money_icon_click_easteregg.disabled = false	
+	
+	
+	
+	
+	
+func connect_signals():
+	GameManager.spawn_birdy.connect(birds_unlocked)
+	
+	
+	
+	
+	
+func birds_unlocked():
+	birds_amount.visible = true
+	birds.visible = true
+	sell_birds_button.visible = true
+	birds_animation_easteregg_button.visible = true
+		

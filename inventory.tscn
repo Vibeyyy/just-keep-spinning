@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c10tugsata5n8"]
 
 [ext_resource type="Script" uid="uid://tqerb5hilks5" path="res://inventory.gd" id="1_pohso"]
+[ext_resource type="Texture2D" uid="uid://cwuean1qm41xi" path="res://sprites_large/Worn-Parchment-BG-2.png" id="2_dw5ng"]
 [ext_resource type="Texture2D" uid="uid://dotpkurm0ud2" path="res://sprites/tumble_weed_roll.png" id="2_psafj"]
 [ext_resource type="Texture2D" uid="uid://44lp0lgd0t6b" path="res://sprites/flying_birdy.png" id="3_5tt2m"]
 [ext_resource type="Texture2D" uid="uid://b5tntuajfau50" path="res://sprites/money_sheet.png" id="4_mrqgh"]
@@ -355,12 +356,11 @@ animations = [{
 [node name="inventory_panel" type="CanvasLayer" unique_id=218685291]
 script = ExtResource("1_pohso")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=447326508]
-offset_left = -3.0
-offset_top = 438.0
-offset_right = 1156.0
-offset_bottom = 648.0
-color = Color(0.0012691597, 0.34696808, 0.53519505, 0.9372549)
+[node name="background" type="Sprite2D" parent="." unique_id=1587766736]
+texture_filter = 1
+position = Vector2(583, 321)
+scale = Vector2(2.113, 2.113)
+texture = ExtResource("2_dw5ng")
 
 [node name="tumbleweeds" type="AnimatedSprite2D" parent="." unique_id=374302712]
 position = Vector2(55.87, 503)
@@ -389,6 +389,7 @@ theme_override_font_sizes/font_size = 47
 text = "Inventory"
 
 [node name="birds_amount" type="Label" parent="." unique_id=290615981]
+visible = false
 offset_left = 104.0
 offset_top = 515.0
 offset_right = 164.0

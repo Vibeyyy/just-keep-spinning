@@ -9,7 +9,7 @@ extends Area2D
 var windmill_time = 0
 var is_windmill_spinning = true
 @export var windmill_time_add_amount = 0.5
-var windmill_starting_time = 5
+var windmill_starting_time = 555
 
 
 func _process(delta: float) -> void:

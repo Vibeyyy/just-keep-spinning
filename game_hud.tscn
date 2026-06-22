@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://4lsq622w5k6x"]
+
+[ext_resource type="Script" uid="uid://77ltm3feg6m8" path="res://game_hud.gd" id="1_og655"]
+[ext_resource type="Texture2D" uid="uid://b5h6o6kaiac1x" path="res://sprites/catalog_icon.png" id="1_q4g6c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q4g6c"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vpmjm"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_og655"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="game_hud" type="CanvasLayer" unique_id=833585222]
+script = ExtResource("1_og655")
+
+[node name="shop_icon" type="Button" parent="." unique_id=1470236427]
+visible = false
+texture_filter = 1
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_icons/icon = ExtResource("1_q4g6c")
+theme_override_styles/normal = SubResource("StyleBoxFlat_q4g6c")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vpmjm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_og655")
+icon = ExtResource("1_q4g6c")
+
+[connection signal="button_down" from="shop_icon" to="." method="_on_shop_icon_button_down"]
+[connection signal="mouse_entered" from="shop_icon" to="." method="_on_shop_icon_mouse_entered"]
+[connection signal="mouse_exited" from="shop_icon" to="." method="_on_shop_icon_mouse_exited"]

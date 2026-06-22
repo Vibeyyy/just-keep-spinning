@@ -1,0 +1,226 @@
+[gd_scene format=3 uid="uid://ckfrn6a46en46"]
+
+[ext_resource type="Script" uid="uid://bt14qta8to7w3" path="res://shop.gd" id="1_fgaav"]
+[ext_resource type="Texture2D" uid="uid://cwuean1qm41xi" path="res://sprites_large/Worn-Parchment-BG-2.png" id="2_6lah5"]
+[ext_resource type="FontFile" uid="uid://dg7yurulh224x" path="res://fonts/pirkkala.ttf" id="3_gmb2m"]
+[ext_resource type="Texture2D" uid="uid://byppbmvgpjf0o" path="res://sprites/leaf_blower_sprite.png" id="4_fgaav"]
+[ext_resource type="AudioStream" uid="uid://50blmvll1b51" path="res://audio/buy_sound.wav" id="5_6lah5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fgaav"]
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6lah5"]
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 12
+shadow_color = Color(0, 0, 0, 0.29803923)
+shadow_size = 4
+shadow_offset = Vector2(0, 2.7)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gmb2m"]
+bg_color = Color(0.2846391, 0.23576608, 0.17802638, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 15
+
+[node name="shop_panel" type="CanvasLayer" unique_id=218685291]
+visible = false
+script = ExtResource("1_fgaav")
+
+[node name="background" type="Sprite2D" parent="." unique_id=935511324]
+texture_filter = 1
+position = Vector2(80.99999, 38.999992)
+scale = Vector2(2.1134765, 2.0219781)
+texture = ExtResource("2_6lah5")
+centered = false
+
+[node name="ColorRect2" type="Panel" parent="." unique_id=2122294637]
+modulate = Color(0.3254902, 0.2627451, 0.1882353, 0.92156863)
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.78200006
+anchor_right = 0.238
+anchor_bottom = 0.78200006
+offset_left = 105.824005
+offset_top = -428.73605
+offset_right = 496.824
+offset_bottom = -349.73605
+theme_override_styles/panel = SubResource("StyleBoxFlat_fgaav")
+
+[node name="ColorRect" type="Panel" parent="." unique_id=266962424]
+modulate = Color(0.3254902, 0.2627451, 0.1882353, 0.92156863)
+texture_filter = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.78200006
+anchor_right = 0.238
+anchor_bottom = 0.78200006
+offset_left = 180.824
+offset_top = -22.736053
+offset_right = 416.824
+offset_bottom = 21.263947
+theme_override_styles/panel = SubResource("StyleBoxFlat_6lah5")
+
+[node name="ColorRect6" type="Panel" parent="." unique_id=1057376908]
+modulate = Color(0.3254902, 0.2627451, 0.1882353, 0.92156863)
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.78200006
+anchor_right = 0.238
+anchor_bottom = 0.78200006
+offset_left = 315.824
+offset_top = -333.73605
+offset_right = 618.594
+offset_bottom = -254.73593
+theme_override_styles/panel = SubResource("StyleBoxFlat_fgaav")
+
+[node name="ColorRect5" type="Panel" parent="." unique_id=1717181264]
+modulate = Color(0.3254902, 0.2627451, 0.1882353, 0.92156863)
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.78200006
+anchor_right = 0.238
+anchor_bottom = 0.78200006
+offset_left = 315.824
+offset_top = -141.73605
+offset_right = 618.594
+offset_bottom = -62.735992
+theme_override_styles/panel = SubResource("StyleBoxFlat_fgaav")
+
+[node name="ColorRect4" type="Panel" parent="." unique_id=1425667942]
+modulate = Color(0.3254902, 0.2627451, 0.1882353, 0.92156863)
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.78200006
+anchor_right = 0.238
+anchor_bottom = 0.78200006
+offset_left = -14.175995
+offset_top = -141.73605
+offset_right = 288.59402
+offset_bottom = -62.735962
+theme_override_styles/panel = SubResource("StyleBoxFlat_fgaav")
+
+[node name="ColorRect3" type="Panel" parent="." unique_id=518827617]
+modulate = Color(0.3254902, 0.2627451, 0.1882353, 0.92156863)
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.78200006
+anchor_right = 0.238
+anchor_bottom = 0.78200006
+offset_left = -14.175995
+offset_top = -333.73605
+offset_right = 288.59402
+offset_bottom = -194.73605
+theme_override_styles/panel = SubResource("StyleBoxFlat_fgaav")
+
+[node name="money_amount" type="Label" parent="." unique_id=543160909]
+texture_filter = 1
+offset_left = 530.0
+offset_top = 490.0
+offset_right = 615.0
+offset_bottom = 530.0
+theme_override_colors/font_color = Color(0.6, 0.8980392, 0.3137255, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_gmb2m")
+theme_override_font_sizes/font_size = 40
+text = "$1200"
+horizontal_alignment = 1
+
+[node name="Inventory_Tittle" type="Label" parent="." unique_id=1193673987]
+modulate = Color(1, 1, 1, 0.7372549)
+texture_filter = 1
+offset_left = 438.00003
+offset_top = 93.0
+offset_right = 789.0
+offset_bottom = 158.0
+scale = Vector2(0.76382166, 0.76382166)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_gmb2m")
+theme_override_font_sizes/font_size = 63
+text = "Shop Catalog"
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1551066308]
+texture_filter = 1
+position = Vector2(279, 216)
+rotation = -1.2287118
+scale = Vector2(1.2288094, 1.3552742)
+texture = ExtResource("4_fgaav")
+
+[node name="Inventory_Tittle2" type="Label" parent="." unique_id=590889031]
+modulate = Color(1, 1, 1, 0.7372549)
+texture_filter = 1
+offset_left = 322.0
+offset_top = 194.0
+offset_right = 674.0
+offset_bottom = 270.0
+scale = Vector2(0.604733, 0.604733)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_gmb2m")
+theme_override_font_sizes/font_size = 76
+text = "Wind Staff"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="." unique_id=2022293513]
+modulate = Color(1, 1, 1, 0.7372549)
+texture_filter = 1
+offset_left = 264.0
+offset_top = 264.0
+offset_right = 583.2307
+offset_bottom = 397.0
+scale = Vector2(0.4263297, 0.4263297)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_gmb2m")
+theme_override_font_sizes/font_size = 27
+text = "A one use staff that instantly adds 30 seconds
+ to the windmills spin time"
+autowrap_mode = 2
+
+[node name="wind_staff_button" type="Button" parent="." unique_id=1694108994]
+texture_filter = 1
+offset_left = 419.0
+offset_top = 258.0
+offset_right = 521.0
+offset_bottom = 293.0
+scale = Vector2(1.2799976, 1.2799976)
+theme_override_colors/font_color = Color(0.6, 0.8980392, 0.3137255, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_gmb2m")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gmb2m")
+text = "Buy for 200$"
+
+[node name="buy_sound" type="AudioStreamPlayer2D" parent="." unique_id=234336034]
+stream = ExtResource("5_6lah5")
+pitch_scale = 1.09
+bus = &"SFX"
+
+[node name="close_button" type="Button" parent="." unique_id=112658384]
+texture_filter = 1
+offset_left = 887.0
+offset_top = 81.00001
+offset_right = 989.0
+offset_bottom = 116.00001
+scale = Vector2(1.2799976, 1.2799976)
+theme_override_colors/font_color = Color(1, 0.17000002, 0.17000002, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_gmb2m")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_gmb2m")
+text = "Exit"
+
+[connection signal="pressed" from="wind_staff_button" to="." method="_on_wind_staff_button_pressed"]
+[connection signal="button_down" from="close_button" to="." method="_on_close_button_button_down"]
