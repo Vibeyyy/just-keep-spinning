@@ -1,4 +1,5 @@
 extends Node2D
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 var birdy_scene = preload("res://flying_birdy_bird.tscn")
 var markerlefttop: Marker2D
@@ -17,6 +18,7 @@ func _ready() -> void:
 	
 	
 func spawn_birdy():
+	audio_stream_player_2d.play()
 	var new_birdy = birdy_scene.instantiate()
 	var spawn_left = randf() < 0.5
 	var spawn_x

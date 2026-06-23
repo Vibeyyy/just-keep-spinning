@@ -19,6 +19,10 @@ func open_shop():
 
 func _process(delta: float) -> void:
 	money_amount.text = ("$" + str(GameManager.money_held))
+	if self.visible == true:
+		GameManager.is_shop_open = true
+	elif self.visible == false:
+		GameManager.is_shop_open = false
 
 
 

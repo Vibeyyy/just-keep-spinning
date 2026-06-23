@@ -4,7 +4,26 @@
 [ext_resource type="Texture2D" uid="uid://cwuean1qm41xi" path="res://sprites_large/Worn-Parchment-BG-2.png" id="2_dw5ng"]
 [ext_resource type="Texture2D" uid="uid://dotpkurm0ud2" path="res://sprites/tumble_weed_roll.png" id="2_psafj"]
 [ext_resource type="Texture2D" uid="uid://44lp0lgd0t6b" path="res://sprites/flying_birdy.png" id="3_5tt2m"]
-[ext_resource type="Texture2D" uid="uid://b5tntuajfau50" path="res://sprites/money_sheet.png" id="4_mrqgh"]
+[ext_resource type="FontFile" uid="uid://dg7yurulh224x" path="res://fonts/pirkkala.ttf" id="5_0xmy5"]
+[ext_resource type="Texture2D" uid="uid://byppbmvgpjf0o" path="res://sprites/leaf_blower_sprite.png" id="6_0xmy5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qjyhv"]
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xmy5"]
+bg_color = Color(0.35909998, 0.54, 0.17819999, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_dw5ng"]
+blend_mode = 1
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5tt2m"]
 atlas = ExtResource("2_psafj")
@@ -221,139 +240,18 @@ animations = [{
 "speed": 13.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4d41x"]
-atlas = ExtResource("4_mrqgh")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ivhg3"]
-atlas = ExtResource("4_mrqgh")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xp0ck"]
-atlas = ExtResource("4_mrqgh")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4lgwj"]
-atlas = ExtResource("4_mrqgh")
-region = Rect2(192, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ywxdu"]
-atlas = ExtResource("4_mrqgh")
-region = Rect2(256, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tsh78"]
-atlas = ExtResource("4_mrqgh")
-region = Rect2(320, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7ytli"]
-atlas = ExtResource("4_mrqgh")
-region = Rect2(384, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_thg7j"]
-atlas = ExtResource("4_mrqgh")
-region = Rect2(448, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8nm8x"]
-atlas = ExtResource("4_mrqgh")
-region = Rect2(512, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hqbwc"]
-atlas = ExtResource("4_mrqgh")
-region = Rect2(576, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lifoe"]
-atlas = ExtResource("4_mrqgh")
-region = Rect2(640, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_80n07"]
-atlas = ExtResource("4_mrqgh")
-region = Rect2(704, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rmken"]
-atlas = ExtResource("4_mrqgh")
-region = Rect2(768, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e2vr7"]
-atlas = ExtResource("4_mrqgh")
-region = Rect2(832, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xqo8o"]
-atlas = ExtResource("4_mrqgh")
-region = Rect2(896, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b8fgi"]
-atlas = ExtResource("4_mrqgh")
-region = Rect2(960, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bhrqf"]
-atlas = ExtResource("4_mrqgh")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_bhrqf"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4d41x")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ivhg3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xp0ck")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4lgwj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ywxdu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tsh78")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7ytli")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_thg7j")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8nm8x")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hqbwc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lifoe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_80n07")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rmken")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e2vr7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xqo8o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_b8fgi")
-}],
-"loop": false,
-"name": &"clicked",
-"speed": 25.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bhrqf")
-}],
-"loop": false,
-"name": &"idle",
-"speed": 5.0
-}]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dw5ng"]
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 12
+shadow_color = Color(0, 0, 0, 0.29803923)
+shadow_size = 4
+shadow_offset = Vector2(0, 2.7)
 
 [node name="inventory_panel" type="CanvasLayer" unique_id=218685291]
+process_mode = 2
 script = ExtResource("1_pohso")
 
 [node name="background" type="Sprite2D" parent="." unique_id=1587766736]
@@ -362,9 +260,190 @@ position = Vector2(583, 321)
 scale = Vector2(2.113, 2.113)
 texture = ExtResource("2_dw5ng")
 
+[node name="ColorRect2" type="Panel" parent="." unique_id=1283316416]
+modulate = Color(0.3254902, 0.2627451, 0.1882353, 0.92156863)
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.78200006
+anchor_right = 0.238
+anchor_bottom = 0.78200006
+offset_left = 142.824
+offset_top = -437.73605
+offset_right = 458.824
+offset_bottom = -358.73605
+theme_override_styles/panel = SubResource("StyleBoxFlat_qjyhv")
+
+[node name="ColorRect3" type="Panel" parent="." unique_id=375192274]
+modulate = Color(0.3254902, 0.2627451, 0.1882353, 0.92156863)
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.78200006
+anchor_right = 0.238
+anchor_bottom = 0.78200006
+offset_left = -51.175995
+offset_top = -318.73605
+offset_right = 264.824
+offset_bottom = -239.73608
+scale = Vector2(0.57600003, 1.4782609)
+theme_override_styles/panel = SubResource("StyleBoxFlat_qjyhv")
+
+[node name="ColorRect5" type="Panel" parent="." unique_id=1001352976]
+modulate = Color(0.3254902, 0.2627451, 0.1882353, 0.92156863)
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.78200006
+anchor_right = 0.238
+anchor_bottom = 0.78200006
+offset_left = 210.824
+offset_top = -318.73605
+offset_right = 526.824
+offset_bottom = -239.73605
+scale = Vector2(0.57600003, 1.4782609)
+theme_override_styles/panel = SubResource("StyleBoxFlat_qjyhv")
+
+[node name="ColorRect4" type="Panel" parent="." unique_id=893870644]
+modulate = Color(0.3254902, 0.2627451, 0.1882353, 0.92156863)
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.78200006
+anchor_right = 0.238
+anchor_bottom = 0.78200006
+offset_left = -51.175995
+offset_top = -175.73605
+offset_right = 264.824
+offset_bottom = -96.73605
+scale = Vector2(0.57600003, 1.4782609)
+theme_override_styles/panel = SubResource("StyleBoxFlat_qjyhv")
+
+[node name="Sell_1_bird" type="Button" parent="." unique_id=2143672070]
+texture_filter = 1
+offset_left = 324.99997
+offset_top = 222.0
+offset_right = 392.36636
+offset_bottom = 243.0
+scale = Vector2(1.0094053, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("5_0xmy5")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_0xmy5")
+text = "Sell One"
+
+[node name="use_windstaff_1" type="Button" parent="." unique_id=1276557560]
+texture_filter = 1
+offset_left = 589.0
+offset_top = 222.0
+offset_right = 656.3664
+offset_bottom = 243.0
+scale = Vector2(1.0094053, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("5_0xmy5")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_0xmy5")
+text = "use one"
+
+[node name="Sell_1_tumbleweed" type="Button" parent="." unique_id=1567611637]
+texture_filter = 1
+offset_left = 324.99997
+offset_top = 367.0
+offset_right = 392.36636
+offset_bottom = 388.0
+scale = Vector2(1.0094053, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("5_0xmy5")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_0xmy5")
+text = "Sell One"
+
+[node name="sell_5_bird" type="Button" parent="." unique_id=187586461]
+texture_filter = 1
+offset_left = 324.99997
+offset_top = 247.0
+offset_right = 392.36636
+offset_bottom = 268.0
+scale = Vector2(1.0094053, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("5_0xmy5")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_0xmy5")
+text = "Sell Five"
+
+[node name="use_windstaff_5" type="Button" parent="." unique_id=415578425]
+texture_filter = 1
+offset_left = 589.0
+offset_top = 247.0
+offset_right = 656.3664
+offset_bottom = 268.0
+scale = Vector2(1.0094053, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("5_0xmy5")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_0xmy5")
+text = "use five"
+
+[node name="sell_5_tumbleweed" type="Button" parent="." unique_id=1332372596]
+texture_filter = 1
+offset_left = 324.99997
+offset_top = 392.0
+offset_right = 392.36636
+offset_bottom = 413.0
+scale = Vector2(1.0094053, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("5_0xmy5")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_0xmy5")
+text = "Sell Five"
+
+[node name="sell_10_bird" type="Button" parent="." unique_id=30303850]
+texture_filter = 1
+offset_left = 324.99997
+offset_top = 272.0
+offset_right = 392.36636
+offset_bottom = 293.0
+scale = Vector2(1.0094053, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("5_0xmy5")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_0xmy5")
+text = "Sell ten"
+
+[node name="use_windstaff_10" type="Button" parent="." unique_id=80126473]
+texture_filter = 1
+offset_left = 589.0
+offset_top = 272.0
+offset_right = 656.3664
+offset_bottom = 293.0
+scale = Vector2(1.0094053, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("5_0xmy5")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_0xmy5")
+text = "use ten"
+
+[node name="sell_10_tumbleweed" type="Button" parent="." unique_id=6862532]
+texture_filter = 1
+offset_left = 324.99997
+offset_top = 417.0
+offset_right = 392.36636
+offset_bottom = 438.0
+scale = Vector2(1.0094053, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("5_0xmy5")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_0xmy5")
+text = "Sell ten"
+
 [node name="tumbleweeds" type="AnimatedSprite2D" parent="." unique_id=374302712]
-position = Vector2(55.87, 503)
-rotation = -0.47996554
+material = SubResource("CanvasItemMaterial_dw5ng")
+position = Vector2(261, 391.99997)
 scale = Vector2(0.17916666, 0.1676294)
 sprite_frames = SubResource("SpriteFrames_a8ig1")
 animation = &"easter_egg"
@@ -373,7 +452,7 @@ frame = 7
 frame_progress = 1.0
 
 [node name="birds" type="AnimatedSprite2D" parent="." unique_id=1228380480]
-position = Vector2(139, 509.1444)
+position = Vector2(264.99997, 260)
 scale = Vector2(0.2985715, 0.29857153)
 sprite_frames = SubResource("SpriteFrames_2pjyi")
 animation = &"easter_egg"
@@ -381,40 +460,62 @@ frame = 16
 frame_progress = 1.0
 
 [node name="Inventory_Tittle" type="Label" parent="." unique_id=1193673987]
-offset_left = 488.0
-offset_top = 428.0
-offset_right = 707.0
-offset_bottom = 493.0
+modulate = Color(1, 1, 1, 0.7372549)
+offset_left = 474.0
+offset_top = 87.0
+offset_right = 693.0
+offset_bottom = 152.0
+theme_override_fonts/font = ExtResource("5_0xmy5")
 theme_override_font_sizes/font_size = 47
 text = "Inventory"
 
 [node name="birds_amount" type="Label" parent="." unique_id=290615981]
-visible = false
-offset_left = 104.0
-offset_top = 515.0
-offset_right = 164.0
-offset_bottom = 554.0
-theme_override_font_sizes/font_size = 18
+texture_filter = 1
+offset_left = 233.0
+offset_top = 265.0
+offset_right = 292.99997
+offset_bottom = 304.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_0xmy5")
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="windstaff_amount" type="Label" parent="." unique_id=1399059401]
+texture_filter = 1
+offset_left = 486.0
+offset_top = 265.0
+offset_right = 546.0
+offset_bottom = 304.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_0xmy5")
+theme_override_font_sizes/font_size = 24
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="tumbleweed_amount" type="Label" parent="." unique_id=1163236882]
-offset_left = 28.0
-offset_top = 515.0
-offset_right = 88.0
-offset_bottom = 554.0
-theme_override_font_sizes/font_size = 18
+texture_filter = 1
+offset_left = 233.0
+offset_top = 407.0
+offset_right = 292.99997
+offset_bottom = 446.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("5_0xmy5")
+theme_override_font_sizes/font_size = 24
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="birds_animation_easteregg_button" type="Button" parent="." unique_id=2096055375]
 modulate = Color(1, 1, 1, 0)
-offset_left = 117.0
-offset_top = 486.0
-offset_right = 160.0
-offset_bottom = 518.0
+offset_left = 228.0
+offset_top = 313.0
+offset_right = 271.0
+offset_bottom = 345.0
 
 [node name="tumbleweed_animation_easteregg_button" type="Button" parent="." unique_id=1546617718]
 modulate = Color(1, 1, 1, 0)
@@ -423,38 +524,6 @@ offset_top = 481.0
 offset_right = 75.0
 offset_bottom = 522.0
 
-[node name="sell_tumbleweeds_button" type="LineEdit" parent="." unique_id=843670554]
-offset_left = 24.0
-offset_top = 545.0
-offset_right = 92.5
-offset_bottom = 567.0
-theme_override_font_sizes/font_size = 10
-placeholder_text = "Sell Amount"
-
-[node name="sell_birds_button" type="LineEdit" parent="." unique_id=330696617]
-offset_left = 101.895
-offset_top = 545.0
-offset_right = 169.8949
-offset_bottom = 567.0
-theme_override_font_sizes/font_size = 10
-placeholder_text = "Sell Amount"
-
-[node name="money_sprite" type="AnimatedSprite2D" parent="." unique_id=1103293040]
-texture_filter = 1
-position = Vector2(53, 620.6)
-sprite_frames = SubResource("SpriteFrames_bhrqf")
-animation = &"clicked"
-frame = 15
-frame_progress = 1.0
-
-[node name="money_amount" type="Label" parent="." unique_id=543160909]
-offset_left = 84.0
-offset_top = 598.0
-offset_right = 124.0
-offset_bottom = 634.0
-theme_override_font_sizes/font_size = 26
-text = "0"
-
 [node name="money_icon_click_easteregg" type="Button" parent="." unique_id=1866749811]
 modulate = Color(1, 1, 1, 0)
 offset_left = 24.0
@@ -462,8 +531,95 @@ offset_top = 602.0
 offset_right = 81.0
 offset_bottom = 633.0
 
+[node name="birds_text" type="Label" parent="." unique_id=736205628]
+modulate = Color(1, 1, 1, 0.7372549)
+texture_filter = 1
+offset_left = 207.0
+offset_top = 191.00002
+offset_right = 559.0
+offset_bottom = 267.0
+scale = Vector2(0.604733, 0.604733)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_0xmy5")
+theme_override_font_sizes/font_size = 54
+text = "Birds"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="windstaff_text" type="Label" parent="." unique_id=669615931]
+modulate = Color(1, 1, 1, 0.7372549)
+texture_filter = 1
+offset_left = 469.0
+offset_top = 191.00002
+offset_right = 821.0
+offset_bottom = 267.0
+scale = Vector2(0.604733, 0.604733)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_0xmy5")
+theme_override_font_sizes/font_size = 54
+text = "Wind Staff"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="tumbleweed_text" type="Label" parent="." unique_id=746664321]
+modulate = Color(1, 1, 1, 0.7372549)
+texture_filter = 1
+offset_left = 207.0
+offset_top = 339.0
+offset_right = 559.0
+offset_bottom = 415.0
+scale = Vector2(0.604733, 0.604733)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_0xmy5")
+theme_override_font_sizes/font_size = 41
+text = "tumbleweeds"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="Panel" parent="." unique_id=295007399]
+modulate = Color(0.3254902, 0.2627451, 0.1882353, 0.92156863)
+texture_filter = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.78200006
+anchor_right = 0.238
+anchor_bottom = 0.78200006
+offset_left = 189.824
+offset_top = 6.2639465
+offset_right = 425.824
+offset_bottom = 50.263947
+theme_override_styles/panel = SubResource("StyleBoxFlat_dw5ng")
+
+[node name="money_amount_text" type="Label" parent="." unique_id=1437867174]
+texture_filter = 1
+offset_left = 541.0
+offset_top = 517.0
+offset_right = 626.0
+offset_bottom = 557.0
+theme_override_colors/font_color = Color(0.6, 0.8980392, 0.3137255, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_0xmy5")
+theme_override_font_sizes/font_size = 40
+text = "$1200"
+horizontal_alignment = 1
+
+[node name="windstaff" type="Sprite2D" parent="." unique_id=101518892]
+texture_filter = 1
+position = Vector2(506, 250.00002)
+rotation = -1.2426745
+scale = Vector2(1.025, 1.025)
+texture = ExtResource("6_0xmy5")
+
+[connection signal="button_down" from="Sell_1_bird" to="." method="_on_sell_1_bird_button_down"]
+[connection signal="button_down" from="use_windstaff_1" to="." method="_on_use_windstaff_1_button_down"]
+[connection signal="button_down" from="Sell_1_tumbleweed" to="." method="_on_sell_1_tumbleweed_button_down"]
+[connection signal="button_down" from="sell_5_bird" to="." method="_on_sell_5_bird_button_down"]
+[connection signal="button_down" from="use_windstaff_5" to="." method="_on_use_windstaff_5_button_down"]
+[connection signal="button_down" from="sell_5_tumbleweed" to="." method="_on_sell_5_tumbleweed_button_down"]
+[connection signal="button_down" from="sell_10_bird" to="." method="_on_sell_10_bird_button_down"]
+[connection signal="button_down" from="use_windstaff_10" to="." method="_on_use_windstaff_10_button_down"]
+[connection signal="button_down" from="sell_10_tumbleweed" to="." method="_on_sell_10_tumbleweed_button_down"]
 [connection signal="pressed" from="birds_animation_easteregg_button" to="." method="_on_birds_animation_easteregg_button_pressed"]
 [connection signal="pressed" from="tumbleweed_animation_easteregg_button" to="." method="_on_tumbleweed_animation_easteregg_pressed"]
-[connection signal="text_submitted" from="sell_tumbleweeds_button" to="." method="_on_sell_tumbleweeds_button_text_submitted"]
-[connection signal="text_submitted" from="sell_birds_button" to="." method="_on_sell_birds_button_text_submitted"]
 [connection signal="pressed" from="money_icon_click_easteregg" to="." method="_on_money_icon_click_easteregg_pressed"]

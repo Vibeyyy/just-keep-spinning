@@ -22,6 +22,8 @@ buses/default_bus_layout="uid://dfp503ov6qxna"
 [autoload]
 
 GameManager="*uid://cv66es6syp5nj"
+background_desert_sounds="*uid://bfuboo6r3ae2p"
+SoftMusicOverlay="*uid://b0t7gyu5n2wv8"
 
 [display]
 

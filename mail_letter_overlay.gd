@@ -7,6 +7,10 @@ var is_letter_on_screen = false
 @onready var body: Label = $body
 @onready var tittle: Label = $tittle
 
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
+
+
 
 
 func _ready() -> void:
@@ -15,6 +19,8 @@ func _ready() -> void:
 
 
 func open(letter) -> void:
+	
+	GameManager.is_letter_shown_at_all = true
 	tittle.text = letter.title
 	body.text = letter.body
 	self.visible = true
@@ -22,7 +28,9 @@ func open(letter) -> void:
 
 
 func _on_close_button_pressed() -> void:
+	GameManager.is_letter_shown_at_all = false
 	if is_letter_on_screen == true:
+		audio_stream_player_2d.play()
 		is_letter_on_screen = false
 		mail_letter_overlay.visible = false
 

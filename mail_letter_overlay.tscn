@@ -3,8 +3,10 @@
 [ext_resource type="Script" uid="uid://cvg7am8tkuo4p" path="res://mail_letter_overlay.gd" id="1_iccn8"]
 [ext_resource type="Texture2D" uid="uid://cwuean1qm41xi" path="res://sprites_large/Worn-Parchment-BG-2.png" id="2_x7j8v"]
 [ext_resource type="FontFile" uid="uid://dg7yurulh224x" path="res://fonts/pirkkala.ttf" id="3_wit61"]
+[ext_resource type="AudioStream" uid="uid://qrvqd863kcf" path="res://audio/mailbox_close_sound.wav" id="4_rjghh"]
 
 [node name="mail_letter_overlay" type="CanvasLayer" unique_id=1231662059]
+process_mode = 2
 visible = false
 script = ExtResource("1_iccn8")
 
@@ -44,5 +46,9 @@ offset_top = 46.0
 offset_right = 1047.0
 offset_bottom = 91.0
 text = "Close"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1819078542]
+stream = ExtResource("4_rjghh")
+volume_db = -2.374
 
 [connection signal="pressed" from="close_button" to="." method="_on_close_button_pressed"]

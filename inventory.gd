@@ -1,7 +1,7 @@
 extends CanvasLayer
 
-@export var tumbleweed_sell_price = 1
-@export var bird_sell_price = 5
+var tumbleweed_sell_price = 3
+var bird_sell_price = 10
 
 @onready var inventory_panel: CanvasLayer = $"."
 @onready var tumbleweed_amount: Label = $tumbleweed_amount
@@ -9,124 +9,97 @@ extends CanvasLayer
 @onready var birds: AnimatedSprite2D = $birds
 @onready var birds_animation_easteregg_button: Button = $birds_animation_easteregg_button
 @onready var tumbleweed_animation_easteregg_button: Button = $tumbleweed_animation_easteregg_button
-@onready var sell_tumbleweeds_button: LineEdit = $sell_tumbleweeds_button
-@onready var sell_birds_button: LineEdit = $sell_birds_button
-
-@onready var money_amount: Label = $money_amount
+@onready var windstaff_amount: Label = $windstaff_amount
 @onready var money_icon_click_easteregg: Button = $money_icon_click_easteregg
-
 @onready var tumbleweeds: AnimatedSprite2D = $tumbleweeds
-@onready var money_sprite: AnimatedSprite2D = $money_sprite
+@onready var money_amount_text: Label = $money_amount_text
+@onready var sell_1_bird: Button = $Sell_1_bird
+@onready var sell_5_bird: Button = $sell_5_bird
+@onready var sell_10_bird: Button = $sell_10_bird
 
-
-
-
-
-
+var windstaff_used_add_amount_seconds = 30
 var inventory_opened = false
 
-
 func _ready() -> void:
+	GameManager.open_inventory.connect(open_inventory)
 	connect_signals()
 
-
 func _process(delta: float) -> void:
+	money_amount_text.text = ("$" + str(GameManager.money_held))
 	if inventory_panel.visible == true:
 		update_held_amounts()
 	if Input.is_action_just_pressed("inventory"):
-		if inventory_opened == false:
-			inventory_opened = true
-			open_inventory()
-			update_held_amounts()
+		if GameManager.is_inventory_open == false:
+			if GameManager.is_shop_open == false:
+				GameManager.is_inventory_open = true
+				open_inventory()
+				update_held_amounts()
 		else:
+			GameManager.is_inventory_open = false
 			inventory_panel.visible = false
 			inventory_opened = false
-		
-
-
 
 func open_inventory():
-		inventory_panel.visible = true
-		print("inventory opened")
-	
-	
+	inventory_panel.visible = true
+	print("inventory opened")
 
 func update_held_amounts():
 	tumbleweed_amount.text = str(GameManager.tumbleweed_held_amount)
 	birds_amount.text = str(GameManager.birdy_held_amount)
-	
-	money_amount.text = str(GameManager.money_held)
-	
-	
-	
-	
-	
-	
-	
-	#selling handlers
-func _on_sell_tumbleweeds_button_text_submitted(new_text: String) -> void:
-	var tumbleweed_amount_to_sell = int(new_text)
-	if tumbleweed_amount_to_sell > 0:
-		if GameManager.tumbleweed_held_amount >= tumbleweed_amount_to_sell:
-			GameManager.tumbleweed_held_amount = GameManager.tumbleweed_held_amount - tumbleweed_amount_to_sell
-			GameManager.money_held = GameManager.money_held + tumbleweed_sell_price * tumbleweed_amount_to_sell
-		
-			print(" you sold ", tumbleweed_amount_to_sell , " tumbleweeds " , " new amount is "  , GameManager.tumbleweed_held_amount , " new money amount is: ", GameManager.money_held )                       
-	
-		
-func _on_sell_birds_button_text_submitted(new_text: String) -> void:
-	var bird_amount_to_sell = int(new_text)
-	if bird_amount_to_sell > 0:
-		if GameManager.birdy_held_amount >= bird_amount_to_sell:
-			GameManager.birdy_held_amount = GameManager.birdy_held_amount - bird_amount_to_sell
-			GameManager.money_held =GameManager.money_held + bird_sell_price * bird_amount_to_sell
-		
-		print(" you sold ", bird_amount_to_sell , " birds " , " new amount is " , GameManager.birdy_held_amount , " new money amount is: ", GameManager.money_held)       
-		
-	
-	
-	
-	
-	
-	
-	
-	#easter egg animations
-func _on_birds_animation_easteregg_button_pressed() -> void:
-	
-	birds.play()
-	birds_animation_easteregg_button.disabled = true
-	await birds.animation_finished
-	birds_animation_easteregg_button.disabled = false
-	
-	
-func _on_tumbleweed_animation_easteregg_pressed() -> void:
-	tumbleweeds.play("easter_egg")
-	tumbleweed_animation_easteregg_button.disabled = true	
-	await tumbleweeds.animation_finished
-	tumbleweed_animation_easteregg_button.disabled = false
-	
+	windstaff_amount.text = str(GameManager.wind_staff_held_amount)
 
+#selling handlers
+func _on_sell_1_bird_button_down() -> void:
+	if GameManager.birdy_held_amount >= 1:
+		GameManager.birdy_held_amount = GameManager.birdy_held_amount - 1
+		GameManager.money_held = GameManager.money_held + bird_sell_price * 1
 
-func _on_money_icon_click_easteregg_pressed() -> void:
-	money_sprite.play("clicked")
-	money_icon_click_easteregg.disabled = true	
-	await money_sprite.animation_finished
-	money_icon_click_easteregg.disabled = false	
-	
-	
-	
-	
-	
+func _on_sell_5_bird_button_down() -> void:
+	if GameManager.birdy_held_amount >= 5:
+		GameManager.birdy_held_amount = GameManager.birdy_held_amount - 5
+		GameManager.money_held = GameManager.money_held + bird_sell_price * 5
+
+func _on_sell_10_bird_button_down() -> void:
+	if GameManager.birdy_held_amount >= 10:
+		GameManager.birdy_held_amount = GameManager.birdy_held_amount - 10
+		GameManager.money_held = GameManager.money_held + bird_sell_price * 10
+
+func _on_sell_1_tumbleweed_button_down() -> void:
+	if GameManager.tumbleweed_held_amount >= 1:
+		GameManager.tumbleweed_held_amount = GameManager.tumbleweed_held_amount - 1
+		GameManager.money_held = GameManager.money_held + tumbleweed_sell_price * 1
+
+func _on_sell_5_tumbleweed_button_down() -> void:
+	if GameManager.tumbleweed_held_amount >= 5:
+		GameManager.tumbleweed_held_amount = GameManager.tumbleweed_held_amount - 5
+		GameManager.money_held = GameManager.money_held + tumbleweed_sell_price * 5
+
+func _on_sell_10_tumbleweed_button_down() -> void:
+	if GameManager.tumbleweed_held_amount >= 10:
+		GameManager.tumbleweed_held_amount = GameManager.tumbleweed_held_amount - 10
+		GameManager.money_held = GameManager.money_held + tumbleweed_sell_price * 10
+
+#use handlers
+func _on_use_windstaff_1_button_down() -> void:
+	if GameManager.wind_staff_held_amount >= 1:
+		GameManager.wind_staff_held_amount -= 1
+		GameManager.add_staff_time.emit(windstaff_used_add_amount_seconds * 1)
+
+func _on_use_windstaff_5_button_down() -> void:
+	if GameManager.wind_staff_held_amount >= 5:
+		GameManager.wind_staff_held_amount -= 5
+		GameManager.add_staff_time.emit(windstaff_used_add_amount_seconds * 5)
+
+func _on_use_windstaff_10_button_down() -> void:
+	if GameManager.wind_staff_held_amount >= 10:
+		GameManager.wind_staff_held_amount -= 10
+		GameManager.add_staff_time.emit(windstaff_used_add_amount_seconds * 10)
+
 func connect_signals():
 	GameManager.spawn_birdy.connect(birds_unlocked)
-	
-	
-	
-	
-	
+
 func birds_unlocked():
 	birds_amount.visible = true
 	birds.visible = true
-	sell_birds_button.visible = true
 	birds_animation_easteregg_button.visible = true
 		

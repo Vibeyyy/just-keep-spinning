@@ -52,17 +52,20 @@ position = Vector2(1558, -574)
 [node name="markerleftbottom" parent="birdy_spawner" index="3" unique_id=1507720711]
 position = Vector2(-1612, -208)
 
-[node name="Node2D2" parent="." unique_id=218685291 instance=ExtResource("5_7jktm")]
-visible = false
-
-[node name="mail_box" parent="." unique_id=1306799410 instance=ExtResource("6_ryrav")]
-position = Vector2(580, 375)
-
 [node name="mail_letter_overlay" parent="." unique_id=1231662059 instance=ExtResource("7_eow3j")]
+process_mode = 3
 
 [node name="game_hud" parent="." unique_id=833585222 instance=ExtResource("8_j5wjh")]
 
 [node name="shop_panel" parent="." unique_id=525627328 instance=ExtResource("9_vef74")]
+process_mode = 3
+
+[node name="inventory_panel" parent="." unique_id=218685291 instance=ExtResource("5_7jktm")]
+process_mode = 3
+visible = false
+
+[node name="mail_box" parent="." unique_id=1306799410 instance=ExtResource("6_ryrav")]
+position = Vector2(580, 375)
 
 [editable path="tumbleweed_spawner"]
 [editable path="birdy_spawner"]

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b0t7gyu5n2wv8"]
+
+[ext_resource type="AudioStream" uid="uid://dsubex7ibxl53" path="res://audio/soft_music_overlay.wav" id="1_uw0yr"]
+
+[node name="SoftMusicOverlay" type="AudioStreamPlayer" unique_id=803280738]
+process_mode = 3
+stream = ExtResource("1_uw0yr")
+autoplay = true
+bus = &"soft_overlay"

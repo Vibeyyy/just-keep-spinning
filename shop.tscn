@@ -33,6 +33,7 @@ corner_radius_bottom_left = 10
 corner_detail = 15
 
 [node name="shop_panel" type="CanvasLayer" unique_id=218685291]
+process_mode = 2
 visible = false
 script = ExtResource("1_fgaav")
 
