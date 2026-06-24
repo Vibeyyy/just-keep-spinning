@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://b5h6o6kaiac1x" path="res://sprites/catalog_icon.png" id="1_q4g6c"]
 [ext_resource type="FontFile" uid="uid://dg7yurulh224x" path="res://fonts/pirkkala.ttf" id="3_2uf8q"]
 [ext_resource type="Texture2D" uid="uid://c81vxi5h2apa4" path="res://sprites/inventory_icon.png" id="3_vpmjm"]
+[ext_resource type="Texture2D" uid="uid://4mpe0rnjdrqk" path="res://sprites/energy_drink.png" id="5_nlrtl"]
+[ext_resource type="Texture2D" uid="uid://dbwdhis4bbtb5" path="res://sprites/Big Serious Burger.png" id="6_t6vrg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q4g6c"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -85,6 +87,52 @@ theme_override_constants/shadow_outline_size = 4
 theme_override_fonts/font = ExtResource("3_2uf8q")
 theme_override_font_sizes/font_size = 27
 text = "(I)"
+
+[node name="energy_drink_icon" type="Sprite2D" parent="." unique_id=1277283006]
+texture_filter = 1
+position = Vector2(28, 579)
+scale = Vector2(0.5625, 0.5625)
+texture = ExtResource("5_nlrtl")
+
+[node name="burger_icon" type="Sprite2D" parent="." unique_id=757254914]
+texture_filter = 1
+position = Vector2(26, 509)
+scale = Vector2(0.82812506, 0.84375)
+texture = ExtResource("6_t6vrg")
+
+[node name="energy_drink_time_left" type="Label" parent="." unique_id=1332862319]
+texture_filter = 1
+offset_left = 57.0
+offset_top = 554.0
+offset_right = 100.0
+offset_bottom = 637.0
+theme_override_colors/font_color = Color(0.4, 0.5372549, 0.41960785, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("3_2uf8q")
+theme_override_font_sizes/font_size = 72
+text = "5"
+
+[node name="burger_time_left" type="Label" parent="." unique_id=636926626]
+texture_filter = 1
+offset_left = 57.0
+offset_top = 483.0
+offset_right = 100.0
+offset_bottom = 566.0
+theme_override_colors/font_color = Color(0.58431375, 0.23921569, 0.101960786, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("3_2uf8q")
+theme_override_font_sizes/font_size = 72
+text = "5"
 
 [connection signal="button_down" from="shop_icon" to="." method="_on_shop_icon_button_down"]
 [connection signal="mouse_entered" from="shop_icon" to="." method="_on_shop_icon_mouse_entered"]

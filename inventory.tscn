@@ -5,7 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://dotpkurm0ud2" path="res://sprites/tumble_weed_roll.png" id="2_psafj"]
 [ext_resource type="Texture2D" uid="uid://44lp0lgd0t6b" path="res://sprites/flying_birdy.png" id="3_5tt2m"]
 [ext_resource type="FontFile" uid="uid://dg7yurulh224x" path="res://fonts/pirkkala.ttf" id="5_0xmy5"]
+[ext_resource type="Texture2D" uid="uid://bf0xfvuuatd0e" path="res://sprites/BROWN_DOG_PLAYFUL.png" id="5_ho8i8"]
 [ext_resource type="Texture2D" uid="uid://byppbmvgpjf0o" path="res://sprites/leaf_blower_sprite.png" id="6_0xmy5"]
+[ext_resource type="Texture2D" uid="uid://dbwdhis4bbtb5" path="res://sprites/Big Serious Burger.png" id="8_udyo3"]
+[ext_resource type="Texture2D" uid="uid://4mpe0rnjdrqk" path="res://sprites/energy_drink.png" id="9_a8ig1"]
+[ext_resource type="AudioStream" uid="uid://c0bo3h2vliajo" path="res://audio/burger_eat_sound.wav" id="10_a8ig1"]
+[ext_resource type="AudioStream" uid="uid://d0atybqsh1a0c" path="res://audio/drinking_gulp_sound.wav" id="11_2pjyi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qjyhv"]
 corner_radius_top_left = 10
@@ -101,73 +106,21 @@ animations = [{
 "speed": 15.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mrqgh"]
-atlas = ExtResource("3_5tt2m")
-region = Rect2(3504, 0, 219, 175)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dw5ng"]
-atlas = ExtResource("3_5tt2m")
-region = Rect2(0, 0, 219, 175)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0xmy5"]
-atlas = ExtResource("3_5tt2m")
-region = Rect2(219, 0, 219, 175)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qjyhv"]
-atlas = ExtResource("3_5tt2m")
-region = Rect2(438, 0, 219, 175)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ormsd"]
-atlas = ExtResource("3_5tt2m")
-region = Rect2(657, 0, 219, 175)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ho8i8"]
-atlas = ExtResource("3_5tt2m")
-region = Rect2(876, 0, 219, 175)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_udyo3"]
-atlas = ExtResource("3_5tt2m")
-region = Rect2(1095, 0, 219, 175)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a8ig1"]
-atlas = ExtResource("3_5tt2m")
-region = Rect2(1314, 0, 219, 175)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_2pjyi"]
-atlas = ExtResource("3_5tt2m")
-region = Rect2(1533, 0, 219, 175)
+atlas = ExtResource("5_ho8i8")
+region = Rect2(0, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dhhmk"]
-atlas = ExtResource("3_5tt2m")
-region = Rect2(1752, 0, 219, 175)
+atlas = ExtResource("5_ho8i8")
+region = Rect2(32, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4epum"]
-atlas = ExtResource("3_5tt2m")
-region = Rect2(1971, 0, 219, 175)
+atlas = ExtResource("5_ho8i8")
+region = Rect2(64, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kucie"]
-atlas = ExtResource("3_5tt2m")
-region = Rect2(2190, 0, 219, 175)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8xn2g"]
-atlas = ExtResource("3_5tt2m")
-region = Rect2(2409, 0, 219, 175)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b541n"]
-atlas = ExtResource("3_5tt2m")
-region = Rect2(2628, 0, 219, 175)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n787p"]
-atlas = ExtResource("3_5tt2m")
-region = Rect2(2847, 0, 219, 175)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6a2vb"]
-atlas = ExtResource("3_5tt2m")
-region = Rect2(3066, 0, 219, 175)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t4mou"]
-atlas = ExtResource("3_5tt2m")
-region = Rect2(3285, 0, 219, 175)
+atlas = ExtResource("5_ho8i8")
+region = Rect2(96, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_scktg"]
 atlas = ExtResource("3_5tt2m")
@@ -176,35 +129,6 @@ region = Rect2(3504, 0, 219, 175)
 [sub_resource type="SpriteFrames" id="SpriteFrames_2pjyi"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mrqgh")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dw5ng")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0xmy5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qjyhv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ormsd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ho8i8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_udyo3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a8ig1")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2pjyi")
 }, {
@@ -216,22 +140,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kucie")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
 }, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8xn2g")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_b541n")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n787p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6a2vb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t4mou")
-}, {
+"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_scktg")
 }],
@@ -287,6 +201,20 @@ offset_bottom = -239.73608
 scale = Vector2(0.57600003, 1.4782609)
 theme_override_styles/panel = SubResource("StyleBoxFlat_qjyhv")
 
+[node name="ColorRect7" type="Panel" parent="." unique_id=601434290]
+modulate = Color(0.3254902, 0.2627451, 0.1882353, 0.92156863)
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.78200006
+anchor_right = 0.238
+anchor_bottom = 0.78200006
+offset_left = 469.82407
+offset_top = -318.73605
+offset_right = 785.8241
+offset_bottom = -239.73608
+scale = Vector2(0.57600003, 1.4782609)
+theme_override_styles/panel = SubResource("StyleBoxFlat_qjyhv")
+
 [node name="ColorRect5" type="Panel" parent="." unique_id=1001352976]
 modulate = Color(0.3254902, 0.2627451, 0.1882353, 0.92156863)
 anchors_preset = -1
@@ -301,7 +229,35 @@ offset_bottom = -239.73605
 scale = Vector2(0.57600003, 1.4782609)
 theme_override_styles/panel = SubResource("StyleBoxFlat_qjyhv")
 
+[node name="ColorRect6" type="Panel" parent="." unique_id=881322514]
+modulate = Color(0.3254902, 0.2627451, 0.1882353, 0.92156863)
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.78200006
+anchor_right = 0.238
+anchor_bottom = 0.78200006
+offset_left = 210.824
+offset_top = -175.73605
+offset_right = 526.824
+offset_bottom = -96.73605
+scale = Vector2(0.57600003, 1.4782609)
+theme_override_styles/panel = SubResource("StyleBoxFlat_qjyhv")
+
 [node name="ColorRect4" type="Panel" parent="." unique_id=893870644]
+modulate = Color(0.3254902, 0.2627451, 0.1882353, 0.92156863)
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.78200006
+anchor_right = 0.238
+anchor_bottom = 0.78200006
+offset_left = 469.824
+offset_top = -175.73605
+offset_right = 785.824
+offset_bottom = -96.73605
+scale = Vector2(0.57600003, 1.4782609)
+theme_override_styles/panel = SubResource("StyleBoxFlat_qjyhv")
+
+[node name="ColorRect8" type="Panel" parent="." unique_id=582479939]
 modulate = Color(0.3254902, 0.2627451, 0.1882353, 0.92156863)
 anchors_preset = -1
 anchor_left = 0.238
@@ -441,6 +397,34 @@ theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_0xmy5")
 text = "Sell ten"
 
+[node name="use_1_burger" type="Button" parent="." unique_id=4685974]
+texture_filter = 1
+offset_left = 846.0
+offset_top = 365.0
+offset_right = 913.3664
+offset_bottom = 386.0
+scale = Vector2(1.0094053, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("5_0xmy5")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_0xmy5")
+text = "use one"
+
+[node name="use_1_energydrink" type="Button" parent="." unique_id=881244918]
+texture_filter = 1
+offset_left = 846.0
+offset_top = 222.0
+offset_right = 913.3664
+offset_bottom = 243.0
+scale = Vector2(1.0094053, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("5_0xmy5")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_0xmy5")
+text = "USe one"
+
 [node name="tumbleweeds" type="AnimatedSprite2D" parent="." unique_id=374302712]
 material = SubResource("CanvasItemMaterial_dw5ng")
 position = Vector2(261, 391.99997)
@@ -456,8 +440,14 @@ position = Vector2(264.99997, 260)
 scale = Vector2(0.2985715, 0.29857153)
 sprite_frames = SubResource("SpriteFrames_2pjyi")
 animation = &"easter_egg"
-frame = 16
 frame_progress = 1.0
+
+[node name="dog" type="AnimatedSprite2D" parent="." unique_id=1552890084]
+texture_filter = 1
+position = Vector2(571, 382)
+scale = Vector2(2.424, 2.424)
+sprite_frames = SubResource("SpriteFrames_2pjyi")
+autoplay = "default"
 
 [node name="Inventory_Tittle" type="Label" parent="." unique_id=1193673987]
 modulate = Color(1, 1, 1, 0.7372549)
@@ -495,12 +485,55 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="energy_drink_amount" type="Label" parent="." unique_id=730765793]
+texture_filter = 1
+offset_left = 746.0
+offset_top = 265.0
+offset_right = 806.0
+offset_bottom = 304.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_0xmy5")
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="tumbleweed_amount" type="Label" parent="." unique_id=1163236882]
 texture_filter = 1
 offset_left = 233.0
 offset_top = 407.0
 offset_right = 292.99997
 offset_bottom = 446.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("5_0xmy5")
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="burger_amount" type="Label" parent="." unique_id=491737772]
+texture_filter = 1
+offset_left = 745.0
+offset_top = 406.0
+offset_right = 805.0
+offset_bottom = 445.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("5_0xmy5")
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="goodboy_amount" type="Label" parent="." unique_id=1125264239]
+texture_filter = 1
+offset_left = 546.0
+offset_top = 416.0
+offset_right = 606.0
+offset_bottom = 455.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
@@ -561,6 +594,49 @@ text = "Wind Staff"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="windstaff_text2" type="Label" parent="." unique_id=1704304016]
+modulate = Color(1, 1, 1, 0.7372549)
+texture_filter = 1
+offset_left = 727.0
+offset_top = 192.00002
+offset_right = 1079.0
+offset_bottom = 268.0
+scale = Vector2(0.604733, 0.604733)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_0xmy5")
+theme_override_font_sizes/font_size = 42
+text = "angel energy"
+horizontal_alignment = 1
+
+[node name="windstaff_text3" type="Label" parent="." unique_id=1663371911]
+modulate = Color(1, 1, 1, 0.7372549)
+texture_filter = 1
+offset_left = 728.00006
+offset_top = 341.0
+offset_right = 1080.0
+offset_bottom = 417.0
+scale = Vector2(0.604733, 0.604733)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_0xmy5")
+theme_override_font_sizes/font_size = 30
+text = "supa serious burga"
+horizontal_alignment = 1
+
+[node name="dog_text" type="Label" parent="." unique_id=1848911589]
+modulate = Color(1, 1, 1, 0.7372549)
+texture_filter = 1
+offset_left = 469.0
+offset_top = 335.0
+offset_right = 821.0
+offset_bottom = 411.0
+scale = Vector2(0.604733, 0.604733)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_0xmy5")
+theme_override_font_sizes/font_size = 54
+text = "good boy"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="tumbleweed_text" type="Label" parent="." unique_id=746664321]
 modulate = Color(1, 1, 1, 0.7372549)
 texture_filter = 1
@@ -611,6 +687,24 @@ rotation = -1.2426745
 scale = Vector2(1.025, 1.025)
 texture = ExtResource("6_0xmy5")
 
+[node name="burger" type="Sprite2D" parent="." unique_id=874527451]
+texture_filter = 1
+position = Vector2(773.00006, 391)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("8_udyo3")
+
+[node name="angel_energy" type="Sprite2D" parent="." unique_id=1230730017]
+texture_filter = 1
+position = Vector2(773.99994, 246.99998)
+scale = Vector2(0.39, 0.39)
+texture = ExtResource("9_a8ig1")
+
+[node name="burger_eat_sound" type="AudioStreamPlayer2D" parent="." unique_id=403006258]
+stream = ExtResource("10_a8ig1")
+
+[node name="drink_sound" type="AudioStreamPlayer2D" parent="." unique_id=962257054]
+stream = ExtResource("11_2pjyi")
+
 [connection signal="button_down" from="Sell_1_bird" to="." method="_on_sell_1_bird_button_down"]
 [connection signal="button_down" from="use_windstaff_1" to="." method="_on_use_windstaff_1_button_down"]
 [connection signal="button_down" from="Sell_1_tumbleweed" to="." method="_on_sell_1_tumbleweed_button_down"]
@@ -620,6 +714,8 @@ texture = ExtResource("6_0xmy5")
 [connection signal="button_down" from="sell_10_bird" to="." method="_on_sell_10_bird_button_down"]
 [connection signal="button_down" from="use_windstaff_10" to="." method="_on_use_windstaff_10_button_down"]
 [connection signal="button_down" from="sell_10_tumbleweed" to="." method="_on_sell_10_tumbleweed_button_down"]
+[connection signal="button_down" from="use_1_burger" to="." method="_on_use_1_burger_button_down"]
+[connection signal="button_down" from="use_1_energydrink" to="." method="_on_use_1_energydrink_button_down"]
 [connection signal="pressed" from="birds_animation_easteregg_button" to="." method="_on_birds_animation_easteregg_button_pressed"]
 [connection signal="pressed" from="tumbleweed_animation_easteregg_button" to="." method="_on_tumbleweed_animation_easteregg_pressed"]
 [connection signal="pressed" from="money_icon_click_easteregg" to="." method="_on_money_icon_click_easteregg_pressed"]

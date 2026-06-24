@@ -1,5 +1,7 @@
 extends Node
 
+
+signal dog_unlocked
 signal add_staff_time(amount: int)
 signal open_inventory
 signal shop_unlocked
@@ -12,8 +14,21 @@ var tumbleweed_held_amount = 0
 var birdy_spawn_amount = 22
 var birdy_spawn_window_time = 5
 var birdy_held_amount = 0
-var money_held = 0
+var money_held = 10000
 var wind_staff_held_amount = 0
+var burger_held_amount = 0
+var energy_drink_held_amount = 0
+var good_boy_amount = 0
+var energy_drink_time_left: float = 0.0
+var burgery_time_left: float = 0.0
+
+#####
+var is_energy_drink_active = false
+var is_burger_active = false
+var windmill_time_add_amount = 0.2
+#####
+
+
 var is_inventory_open = false
 var is_shop_open = false
 var is_letter_shown_at_all = false

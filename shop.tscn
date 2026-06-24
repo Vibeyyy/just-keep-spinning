@@ -5,6 +5,10 @@
 [ext_resource type="FontFile" uid="uid://dg7yurulh224x" path="res://fonts/pirkkala.ttf" id="3_gmb2m"]
 [ext_resource type="Texture2D" uid="uid://byppbmvgpjf0o" path="res://sprites/leaf_blower_sprite.png" id="4_fgaav"]
 [ext_resource type="AudioStream" uid="uid://50blmvll1b51" path="res://audio/buy_sound.wav" id="5_6lah5"]
+[ext_resource type="Texture2D" uid="uid://dbwdhis4bbtb5" path="res://sprites/Big Serious Burger.png" id="5_gmb2m"]
+[ext_resource type="Texture2D" uid="uid://4mpe0rnjdrqk" path="res://sprites/energy_drink.png" id="6_8kdgp"]
+[ext_resource type="Texture2D" uid="uid://bf0xfvuuatd0e" path="res://sprites/BROWN_DOG_PLAYFUL.png" id="7_myf4l"]
+[ext_resource type="AudioStream" uid="uid://fri1xuv3s8d2" path="res://audio/dog_bark.mp3" id="9_p5a0g"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fgaav"]
 corner_radius_top_left = 10
@@ -23,6 +27,42 @@ shadow_color = Color(0, 0, 0, 0.29803923)
 shadow_size = 4
 shadow_offset = Vector2(0, 2.7)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5a0g"]
+atlas = ExtResource("7_myf4l")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqmyw"]
+atlas = ExtResource("7_myf4l")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sw5c6"]
+atlas = ExtResource("7_myf4l")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_msgp6"]
+atlas = ExtResource("7_myf4l")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e23gp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5a0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqmyw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sw5c6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_msgp6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gmb2m"]
 bg_color = Color(0.2846391, 0.23576608, 0.17802638, 1)
 border_blend = true
@@ -34,7 +74,6 @@ corner_detail = 15
 
 [node name="shop_panel" type="CanvasLayer" unique_id=218685291]
 process_mode = 2
-visible = false
 script = ExtResource("1_fgaav")
 
 [node name="background" type="Sprite2D" parent="." unique_id=935511324]
@@ -81,7 +120,7 @@ anchor_bottom = 0.78200006
 offset_left = 315.824
 offset_top = -333.73605
 offset_right = 618.594
-offset_bottom = -254.73593
+offset_bottom = -194.73605
 theme_override_styles/panel = SubResource("StyleBoxFlat_fgaav")
 
 [node name="ColorRect5" type="Panel" parent="." unique_id=1717181264]
@@ -92,9 +131,9 @@ anchor_top = 0.78200006
 anchor_right = 0.238
 anchor_bottom = 0.78200006
 offset_left = 315.824
-offset_top = -141.73605
+offset_top = -177.73605
 offset_right = 618.594
-offset_bottom = -62.735992
+offset_bottom = -38.736053
 theme_override_styles/panel = SubResource("StyleBoxFlat_fgaav")
 
 [node name="ColorRect4" type="Panel" parent="." unique_id=1425667942]
@@ -105,9 +144,9 @@ anchor_top = 0.78200006
 anchor_right = 0.238
 anchor_bottom = 0.78200006
 offset_left = -14.175995
-offset_top = -141.73605
+offset_top = -176.73605
 offset_right = 288.59402
-offset_bottom = -62.735962
+offset_bottom = -37.736053
 theme_override_styles/panel = SubResource("StyleBoxFlat_fgaav")
 
 [node name="ColorRect3" type="Panel" parent="." unique_id=518827617]
@@ -151,12 +190,31 @@ theme_override_font_sizes/font_size = 63
 text = "Shop Catalog"
 horizontal_alignment = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1551066308]
+[node name="wind_staff" type="Sprite2D" parent="." unique_id=1551066308]
 texture_filter = 1
-position = Vector2(279, 216)
+position = Vector2(278, 224)
 rotation = -1.2287118
 scale = Vector2(1.2288094, 1.3552742)
 texture = ExtResource("4_fgaav")
+
+[node name="supa_burger" type="Sprite2D" parent="." unique_id=759893201]
+texture_filter = 1
+position = Vector2(289, 391)
+scale = Vector2(0.789, 0.87)
+texture = ExtResource("5_gmb2m")
+
+[node name="supa_burger2" type="Sprite2D" parent="." unique_id=238915635]
+texture_filter = 1
+position = Vector2(622, 390)
+scale = Vector2(0.789, 0.71000004)
+texture = ExtResource("6_8kdgp")
+
+[node name="good_boy" type="AnimatedSprite2D" parent="." unique_id=6501347]
+texture_filter = 1
+position = Vector2(641, 242)
+scale = Vector2(3.204, 2.8830607)
+sprite_frames = SubResource("SpriteFrames_e23gp")
+autoplay = "default"
 
 [node name="Inventory_Tittle2" type="Label" parent="." unique_id=590889031]
 modulate = Color(1, 1, 1, 0.7372549)
@@ -170,6 +228,51 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_gmb2m")
 theme_override_font_sizes/font_size = 76
 text = "Wind Staff"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Inventory_Tittle3" type="Label" parent="." unique_id=1668178189]
+modulate = Color(1, 1, 1, 0.7372549)
+texture_filter = 1
+offset_left = 221.0
+offset_top = 339.0
+offset_right = 896.0
+offset_bottom = 415.0
+scale = Vector2(0.604733, 0.604733)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_gmb2m")
+theme_override_font_sizes/font_size = 48
+text = "supa serious Burga"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Inventory_Tittle4" type="Label" parent="." unique_id=1277948690]
+modulate = Color(1, 1, 1, 0.7372549)
+texture_filter = 1
+offset_left = 550.0
+offset_top = 339.0
+offset_right = 1225.0
+offset_bottom = 415.0
+scale = Vector2(0.604733, 0.604733)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_gmb2m")
+theme_override_font_sizes/font_size = 48
+text = "angel energy"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Inventory_Tittle5" type="Label" parent="." unique_id=807913091]
+modulate = Color(1, 1, 1, 0.7372549)
+texture_filter = 1
+offset_left = 550.0
+offset_top = 189.00002
+offset_right = 1225.0
+offset_bottom = 265.0
+scale = Vector2(0.604733, 0.604733)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_gmb2m")
+theme_override_font_sizes/font_size = 73
+text = "Good boy"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
@@ -189,11 +292,57 @@ text = "A one use staff that instantly adds 30 seconds
  to the windmills spin time"
 autowrap_mode = 2
 
+[node name="Label2" type="Label" parent="." unique_id=1282784754]
+modulate = Color(1, 1, 1, 0.7372549)
+texture_filter = 1
+offset_left = 264.0
+offset_top = 423.0
+offset_right = 583.2307
+offset_bottom = 556.0
+scale = Vector2(0.4263297, 0.4263297)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_gmb2m")
+theme_override_font_sizes/font_size = 27
+text = "supa serious. Supa tasty.
+eating this burger will make you STRONG!"
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="." unique_id=215182035]
+modulate = Color(1, 1, 1, 0.7372549)
+texture_filter = 1
+offset_left = 595.0
+offset_top = 436.0
+offset_right = 914.2307
+offset_bottom = 569.0
+scale = Vector2(0.4263297, 0.4263297)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_gmb2m")
+theme_override_font_sizes/font_size = 27
+text = "makes spinning FAST! (Please dont sue us)"
+autowrap_mode = 2
+
+[node name="Label4" type="Label" parent="." unique_id=414244129]
+modulate = Color(1, 1, 1, 0.7372549)
+texture_filter = 1
+offset_left = 595.0
+offset_top = 290.0
+offset_right = 914.2307
+offset_bottom = 423.0
+scale = Vector2(0.4263297, 0.4263297)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_gmb2m")
+theme_override_font_sizes/font_size = 27
+text = "he needs a good home..."
+autowrap_mode = 2
+
 [node name="wind_staff_button" type="Button" parent="." unique_id=1694108994]
 texture_filter = 1
-offset_left = 419.0
+offset_left = 420.00003
 offset_top = 258.0
-offset_right = 521.0
+offset_right = 522.0
 offset_bottom = 293.0
 scale = Vector2(1.2799976, 1.2799976)
 theme_override_colors/font_color = Color(0.6, 0.8980392, 0.3137255, 1)
@@ -201,7 +350,49 @@ theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("3_gmb2m")
 theme_override_styles/normal = SubResource("StyleBoxFlat_gmb2m")
+text = "buy for 400$"
+
+[node name="buy_burger" type="Button" parent="." unique_id=104837813]
+texture_filter = 1
+offset_left = 419.00003
+offset_top = 416.0
+offset_right = 521.0
+offset_bottom = 451.0
+scale = Vector2(1.2799976, 1.2799976)
+theme_override_colors/font_color = Color(0.6, 0.8980392, 0.3137255, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_gmb2m")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gmb2m")
 text = "Buy for 200$"
+
+[node name="buy_energy_drink" type="Button" parent="." unique_id=2042165378]
+texture_filter = 1
+offset_left = 749.00006
+offset_top = 416.0
+offset_right = 851.00006
+offset_bottom = 451.0
+scale = Vector2(1.2799976, 1.2799976)
+theme_override_colors/font_color = Color(0.6, 0.8980392, 0.3137255, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_gmb2m")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gmb2m")
+text = "Buy for 200$"
+
+[node name="buy_dog" type="Button" parent="." unique_id=1249012092]
+texture_filter = 1
+offset_left = 749.0
+offset_top = 258.0
+offset_right = 851.0
+offset_bottom = 293.0
+scale = Vector2(1.2799976, 1.2799976)
+theme_override_colors/font_color = Color(0.6, 0.8980392, 0.3137255, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_gmb2m")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gmb2m")
+text = "Buy for 500$"
 
 [node name="buy_sound" type="AudioStreamPlayer2D" parent="." unique_id=234336034]
 stream = ExtResource("5_6lah5")
@@ -223,5 +414,12 @@ theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_gmb2m")
 text = "Exit"
 
+[node name="dog_bark" type="AudioStreamPlayer2D" parent="." unique_id=734683993]
+stream = ExtResource("9_p5a0g")
+volume_db = 1.0
+
 [connection signal="pressed" from="wind_staff_button" to="." method="_on_wind_staff_button_pressed"]
+[connection signal="button_down" from="buy_burger" to="." method="_on_buy_burger_button_down"]
+[connection signal="button_down" from="buy_energy_drink" to="." method="_on_buy_energy_drink_button_down"]
+[connection signal="button_down" from="buy_dog" to="." method="_on_buy_dog_button_down"]
 [connection signal="button_down" from="close_button" to="." method="_on_close_button_button_down"]

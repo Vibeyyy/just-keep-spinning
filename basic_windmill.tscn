@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://c3odugi4akgx6" path="res://sprites/wooden_sign.png" id="3_uci44"]
 [ext_resource type="FontFile" uid="uid://dt2gd65vvhkl" path="res://fonts/Realwood Regular.otf" id="4_uci44"]
 [ext_resource type="AudioStream" uid="uid://mx4vcl0hwy0" path="res://audio/windmill_loop.mp3" id="5_4alik"]
+[ext_resource type="AudioStream" uid="uid://gjr8a7l1utmq" path="res://audio/click_sound.wav" id="6_sbk3a"]
+[ext_resource type="AudioStream" uid="uid://cexi2rctcp4ob" path="res://audio/wind_staff_woosh_sound.wav" id="7_m1336"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uci44"]
 atlas = ExtResource("2_ku7aw")
@@ -45,6 +47,14 @@ radius = 78.23043
 
 [node name="Node2D" type="Area2D" unique_id=1684639507]
 script = ExtResource("1_yl7hn")
+
+[node name="swoosh_image_for_staff" type="ColorRect" parent="." unique_id=1960692829]
+visible = false
+offset_left = -25355.0
+offset_top = -17353.0
+offset_right = 28682.0
+offset_bottom = 13827.0
+color = Color(1, 1, 1, 0.5137255)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=839605981]
 texture_filter = 1
@@ -91,3 +101,14 @@ uppercase = true
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=858483716]
 stream = ExtResource("5_4alik")
 volume_db = -4.86
+
+[node name="mouse_click" type="AudioStreamPlayer2D" parent="." unique_id=1292436708]
+stream = ExtResource("6_sbk3a")
+volume_db = -1.724
+
+[node name="windstaff_woosh_sound" type="AudioStreamPlayer2D" parent="." unique_id=151580913]
+stream = ExtResource("7_m1336")
+volume_db = -4.597
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

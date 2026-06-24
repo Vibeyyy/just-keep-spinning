@@ -2,6 +2,11 @@ extends CanvasLayer
 
 @onready var shop_icon: Button = $shop_icon
 @onready var inventory_button: Button = $inventory_button
+@onready var energy_drink_time_left: Label = $energy_drink_time_left
+@onready var energy_drink_icon: Sprite2D = $energy_drink_icon
+@onready var burger_time_left: Label = $burger_time_left
+@onready var burger_icon: Sprite2D = $burger_icon
+
 
 
 
@@ -26,7 +31,23 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if GameManager.is_burger_active == true:
+		burger_icon.visible = true
+		burger_time_left.visible = true
+		burger_time_left.text = str(int(GameManager.burgery_time_left))
+	elif GameManager.is_burger_active == false:
+		burger_icon.visible = false	
+		burger_time_left.visible = false
+	
+	if GameManager.is_energy_drink_active == true:
+		energy_drink_icon.visible = true
+		energy_drink_time_left.visible = true
+		energy_drink_time_left.text = str(int(GameManager.energy_drink_time_left))
+	elif GameManager.is_energy_drink_active == false:
+		energy_drink_icon.visible = false
+		energy_drink_time_left.visible = false
+		pass
+	
 
 
 

@@ -9,6 +9,23 @@
 [ext_resource type="PackedScene" uid="uid://mqj0k3nvj8rg" path="res://mail_letter_overlay.tscn" id="7_eow3j"]
 [ext_resource type="PackedScene" uid="uid://4lsq622w5k6x" path="res://game_hud.tscn" id="8_j5wjh"]
 [ext_resource type="PackedScene" uid="uid://ckfrn6a46en46" path="res://shop.tscn" id="9_vef74"]
+[ext_resource type="Texture2D" uid="uid://bsrikmimu74gr" path="res://sprites/DOG_HOUSE(1).png" id="10_hve3p"]
+[ext_resource type="PackedScene" uid="uid://b7cjqn0mrj8f0" path="res://dog_unlock.tscn" id="11_mfdv2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfdv2"]
+atlas = ExtResource("10_hve3p")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iotsf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfdv2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Game" type="Node2D" unique_id=2143807939]
 
@@ -66,6 +83,19 @@ visible = false
 
 [node name="mail_box" parent="." unique_id=1306799410 instance=ExtResource("6_ryrav")]
 position = Vector2(580, 375)
+
+[node name="dog_house" type="AnimatedSprite2D" parent="." unique_id=1928770333]
+visible = false
+texture_filter = 1
+position = Vector2(-795, 255.00002)
+scale = Vector2(1.68, 1.68)
+sprite_frames = SubResource("SpriteFrames_iotsf")
+autoplay = "default"
+
+[node name="Dog_Unlock" parent="." unique_id=110405662 instance=ExtResource("11_mfdv2")]
+visible = false
+position = Vector2(710, 330.99997)
+scale = Vector2(3.48, 3.48)
 
 [editable path="tumbleweed_spawner"]
 [editable path="birdy_spawner"]

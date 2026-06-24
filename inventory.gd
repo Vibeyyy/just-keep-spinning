@@ -3,6 +3,23 @@ extends CanvasLayer
 var tumbleweed_sell_price = 3
 var bird_sell_price = 10
 
+
+
+@onready var use_1_energydrink: Button = $use_1_energydrink
+
+
+@onready var goodboy_amount: Label = $goodboy_amount
+@onready var burger_amount: Label = $burger_amount
+@onready var energy_drink_amount: Label = $energy_drink_amount
+
+
+@onready var drink_sound: AudioStreamPlayer2D = $drink_sound
+@onready var burger_eat_sound: AudioStreamPlayer2D = $burger_eat_sound
+
+
+
+@onready var use_1_burger: Button = $use_1_burger
+
 @onready var inventory_panel: CanvasLayer = $"."
 @onready var tumbleweed_amount: Label = $tumbleweed_amount
 @onready var birds_amount: Label = $birds_amount
@@ -26,6 +43,21 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	money_amount_text.text = ("$" + str(GameManager.money_held))
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	if GameManager.is_energy_drink_active:
+		if not get_tree().paused:
+			GameManager.energy_drink_time_left -= delta
+			if GameManager.energy_drink_time_left <= 0:
+				GameManager.energy_drink_time_left = 0.0
+				GameManager.is_energy_drink_active = false
+	if GameManager.is_burger_active:
+		if not get_tree().paused:
+			GameManager.burgery_time_left -= delta
+			if GameManager.burgery_time_left <= 0:
+				GameManager.burgery_time_left = 0.0
+				GameManager.is_burger_active = false
+				GameManager.windmill_time_add_amount = 0.2  # reset back
+				
 	if inventory_panel.visible == true:
 		update_held_amounts()
 	if Input.is_action_just_pressed("inventory"):
@@ -47,7 +79,9 @@ func update_held_amounts():
 	tumbleweed_amount.text = str(GameManager.tumbleweed_held_amount)
 	birds_amount.text = str(GameManager.birdy_held_amount)
 	windstaff_amount.text = str(GameManager.wind_staff_held_amount)
-
+	energy_drink_amount.text = str(GameManager.energy_drink_held_amount)
+	burger_amount.text = str(GameManager.burger_held_amount)
+	goodboy_amount.text = str(GameManager.good_boy_amount)
 #selling handlers
 func _on_sell_1_bird_button_down() -> void:
 	if GameManager.birdy_held_amount >= 1:
@@ -95,6 +129,38 @@ func _on_use_windstaff_10_button_down() -> void:
 		GameManager.wind_staff_held_amount -= 10
 		GameManager.add_staff_time.emit(windstaff_used_add_amount_seconds * 10)
 
+##############################################################################
+
+func _on_use_1_energydrink_button_down() -> void:
+	print("button pressed")
+	print("amount: ", GameManager.energy_drink_held_amount)
+	print("is active: ", GameManager.is_energy_drink_active)
+	if GameManager.energy_drink_held_amount >= 1:
+		if GameManager.is_energy_drink_active == false:
+			GameManager.energy_drink_held_amount -= 1
+			GameManager.is_energy_drink_active = true
+			GameManager.energy_drink_time_left = 10
+			drink_sound.play()
+			print("drink used!")
+
+
+func _on_use_1_burger_button_down() -> void:
+	if GameManager.burger_held_amount >= 1:
+		if GameManager.is_burger_active == false:
+			GameManager.burger_held_amount -= 1
+			GameManager.is_burger_active = true
+			GameManager.burgery_time_left = 10
+			GameManager.windmill_time_add_amount = .8  # set to boosted value
+			burger_eat_sound.play()
+			print("burger ate!")
+	
+
+
+
+
+
+
+###################################################################################
 func connect_signals():
 	GameManager.spawn_birdy.connect(birds_unlocked)
 
